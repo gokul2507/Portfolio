@@ -360,6 +360,23 @@
         .pane p.body, .md-p { color: var(--text-2); font-size: 0.96rem; line-height: 1.75; margin-bottom: 1rem; max-width: 68ch; }
         .md-p.lead { color: var(--text); font-size: 1.08rem; font-weight: 500; }
 
+        .md-ul { list-style: none; margin: 0 0 1.25rem; max-width: 70ch; }
+        .md-ul li {
+            color: var(--text-2);
+            font-size: 0.93rem;
+            line-height: 1.7;
+            padding: 0.28rem 0 0.28rem 1.4rem;
+            position: relative;
+        }
+        .md-ul li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .md-ul li strong { color: var(--text); font-weight: 600; }
+
         .statement {
             font-family: 'Space Grotesk', sans-serif;
             font-size: clamp(1.15rem, 2.2vw, 1.45rem);
@@ -1053,7 +1070,6 @@
                         <li><button class="tree-item" data-open="projects/crm-mcp-server.md"><i class="fab fa-markdown"></i>crm-mcp-server.md</button></li>
                         <li><button class="tree-item" data-open="projects/ai-browser.md"><i class="fab fa-markdown"></i>ai-browser.md</button></li>
                         <li><button class="tree-item" data-open="projects/zoho-crm-core.md"><i class="fab fa-markdown"></i>zoho-crm-core.md</button></li>
-                        <li><button class="tree-item" data-open="projects/catalyst-fleet.md"><i class="fab fa-markdown"></i>catalyst-fleet.md</button></li>
                         <li><button class="tree-item" data-open="projects/earlier-work.md"><i class="fab fa-markdown"></i>earlier-work.md</button></li>
                     </ul>
                 </li>
@@ -1086,13 +1102,13 @@
                     </div>
                     <p class="md-p">
                         4+ years engineering Zoho CRM's core — a 17,000-class multi-tenant platform.
-                        Along the way: a 128-tool MCP server, an AI-driven browser, and 13 live serverless apps.
+                        Along the way: a 128-tool MCP server and a dual-engine browser built for AI agents.
                     </p>
                     <div class="stats-row">
                         <div class="stat-card"><div class="stat-number" data-count="4" data-suffix="+">0</div><div class="stat-label">Years at Zoho</div></div>
                         <div class="stat-card"><div class="stat-number" data-count="17000" data-suffix="+">0</div><div class="stat-label">Java Classes in My Platform</div></div>
                         <div class="stat-card"><div class="stat-number" data-count="128">0</div><div class="stat-label">MCP Tools Shipped</div></div>
-                        <div class="stat-card"><div class="stat-number" data-count="13">0</div><div class="stat-label">Live Serverless Apps</div></div>
+                        <div class="stat-card"><div class="stat-number" data-count="80" data-suffix="+">0</div><div class="stat-label">Browser Automation Tools</div></div>
                     </div>
                     <h2 class="md-h2"><span class="hash">##</span>Start here</h2>
                     <ul class="quick-list">
@@ -1360,14 +1376,14 @@
                         </div>
                         <div class="skill-category">
                             <div class="skill-category-icon c-rose"><i class="fas fa-cloud"></i></div>
-                            <h3>Cloud, DevOps &amp; Serverless</h3>
+                            <h3>Cloud &amp; DevOps</h3>
                             <div class="skill-item">
                                 <div class="skill-item-header"><span class="skill-item-name">Docker</span><span class="skill-item-percent">86%</span></div>
                                 <div class="skill-bar"><div class="skill-bar-fill rose" data-width="86"></div></div>
                             </div>
                             <div class="skill-item">
-                                <div class="skill-item-header"><span class="skill-item-name">Zoho Catalyst (Serverless)</span><span class="skill-item-percent">85%</span></div>
-                                <div class="skill-bar"><div class="skill-bar-fill rose" data-width="85"></div></div>
+                                <div class="skill-item-header"><span class="skill-item-name">Firebase (Hosting &amp; Realtime DB)</span><span class="skill-item-percent">84%</span></div>
+                                <div class="skill-bar"><div class="skill-bar-fill rose" data-width="84"></div></div>
                             </div>
                             <div class="skill-item">
                                 <div class="skill-item-header"><span class="skill-item-name">CI/CD (GitHub Actions)</span><span class="skill-item-percent">84%</span></div>
@@ -1378,13 +1394,11 @@
                                 <div class="skill-bar"><div class="skill-bar-fill rose" data-width="82"></div></div>
                             </div>
                             <div class="skill-tags">
-                                <span class="skill-tag">Catalyst Functions</span>
-                                <span class="skill-tag">Catalyst Cron Jobs</span>
-                                <span class="skill-tag">Catalyst File Store</span>
-                                <span class="skill-tag">Firebase Hosting</span>
+                                <span class="skill-tag">GitHub Actions</span>
                                 <span class="skill-tag">Nginx</span>
                                 <span class="skill-tag">Git</span>
                                 <span class="skill-tag">Make</span>
+                                <span class="skill-tag">pnpm Monorepos</span>
                             </div>
                         </div>
                         <div class="skill-category">
@@ -1472,6 +1486,14 @@
                         and a Java AST index covering 17,000 classes. The kind of tool this very
                         portfolio's terminal is pretending to be.
                     </p>
+                    <h2 class="md-h2"><span class="hash">##</span>Highlights</h2>
+                    <ul class="md-ul">
+                        <li><strong>128 tools across 28 groups</strong> — code search, ORM/DS-Query helpers, metadata lookups, and knowledge-graph queries, served over STDIO, SSE, and streamable HTTP so any MCP client can connect.</li>
+                        <li><strong>Java AST index</strong> — 17,165 classes and 233,000+ methods parsed from CRM source, so agents jump straight to a definition instead of grepping a million lines.</li>
+                        <li><strong>Self-learning layer</strong> — an aiosqlite usage store tracks which tools actually help and ranks them accordingly; the server gets sharper the more it's used.</li>
+                        <li><strong>Knowledge graph</strong> — entities and relations extracted from the codebase connect modules, tables, and APIs so agents can reason about how pieces fit together.</li>
+                        <li><strong>Built-in dashboard</strong> — a FastAPI + Jinja2 + HTMX web UI for inspecting tool usage and the learning layer in real time.</li>
+                    </ul>
                     <div class="fstat-row">
                         <div><span class="fstat-num" data-count="128">0</span><span class="fstat-label">tools</span></div>
                         <div><span class="fstat-num" data-count="28">0</span><span class="fstat-label">tool groups</span></div>
@@ -1503,6 +1525,13 @@
                         CDP for fidelity — plus a Manifest V3 bridge extension that lets Claude drive real,
                         logged-in web apps: shadow DOM, accessibility tree, heavy SPAs and all.
                     </p>
+                    <h2 class="md-h2"><span class="hash">##</span>Highlights</h2>
+                    <ul class="md-ul">
+                        <li><strong>Two engines, one API</strong> — Lightpanda for fast, lightweight page work; Chromium via the DevTools Protocol when full rendering fidelity matters. The agent never has to care which one is underneath.</li>
+                        <li><strong>Agent-grade actions</strong> — click-by-text, shadow-DOM-aware form filling, drag-and-drop, keyboard input, accessibility-tree snapshots, and network-idle waits — the primitives an AI needs to use real web apps reliably.</li>
+                        <li><strong>claude-web-bridge</strong> — a Manifest V3 extension that drives the user's own logged-in browser through <code>chrome.debugger</code>: trusted clicks via Input.dispatchMouseEvent, JS via Runtime.evaluate, screenshots of background tabs.</li>
+                        <li><strong>Shipped as a platform</strong> — a pnpm monorepo with an MCP server, a JS SDK, and a published Python SDK (<code>ai-browser-sdk</code>, Python 3.10–3.13), tested with vitest in CI.</li>
+                    </ul>
                     <div class="fstat-row">
                         <div><span class="fstat-num" data-count="2">0</span><span class="fstat-label">rendering engines</span></div>
                         <div><span class="fstat-num" data-count="80" data-suffix="+">0</span><span class="fstat-label">browser automation tools</span></div>
@@ -1533,6 +1562,13 @@
                         multi-tenant SaaS. I work on the crmmeta query engine and module customization,
                         tuning hot paths with a custom ORM, DS Query DSL, and multi-tier Redis caching.
                     </p>
+                    <h2 class="md-h2"><span class="hash">##</span>What I actually touch</h2>
+                    <ul class="md-ul">
+                        <li><strong>crmmeta query engine</strong> — the metadata layer that turns module and field definitions into SQL, with every org isolated by tenant (ZGID) in a single multi-tenant deployment.</li>
+                        <li><strong>AdventNet persistence + DS Query</strong> — the in-house ORM and SQL DSL used across 5,000+ files of the codebase; I work on the query paths everything else sits on.</li>
+                        <li><strong>Caching &amp; performance</strong> — multi-tier caching (in-process + Redis) and query optimization that cut key response times by up to 30% in production.</li>
+                        <li><strong>Platform plumbing at scale</strong> — Struts2 routing across 18 config files covering API v2–v10, Spring MVC with AOP interceptors, Kafka events, gRPC services, and Hystrix circuit breakers.</li>
+                    </ul>
                     <div class="fstat-row">
                         <div><span class="fstat-num" data-count="17000" data-suffix="+">0</span><span class="fstat-label">java classes</span></div>
                         <div><span class="fstat-num" data-count="30" data-suffix="%">0</span><span class="fstat-label">faster hot paths</span></div>
@@ -1548,33 +1584,6 @@ cache <span class="v-dim">L1 in-proc →</span> <span class="v-data">L2 redis</s
                     </div>
                     <div class="file-nav">
                         <button data-open="projects/ai-browser.md">← ai-browser.md</button>
-                        <button data-open="projects/catalyst-fleet.md">catalyst-fleet.md →</button>
-                    </div>
-                </section>
-
-                <!-- projects/catalyst-fleet.md -->
-                <section class="pane" id="pane-projects/catalyst-fleet.md">
-                    <p class="crumb">~ <span class="sep">›</span> gokul <span class="sep">›</span> projects <span class="sep">›</span> <span class="cur">catalyst-fleet.md</span></p>
-                    <p class="proj-meta">zoho catalyst · functions · data store · cron</p>
-                    <h1 class="md-h1">Catalyst Serverless Fleet</h1>
-                    <p class="md-p">
-                        Thirteen live serverless projects on Zoho Catalyst — from lead-insight-hub to
-                        enterprise-deal-commander — covering functions, data stores, file stores,
-                        and scheduled jobs, all running in production.
-                    </p>
-                    <div class="fstat-row">
-                        <div><span class="fstat-num" data-count="13">0</span><span class="fstat-label">live projects</span></div>
-                    </div>
-                    <div class="tech-row"><span>Catalyst</span><span>Node.js</span><span>Functions</span><span>Data Store</span><span>Cron</span></div>
-                    <div class="vpanel" aria-hidden="true">
-                        <div class="vpanel-head"><span class="dot"></span> catalyst · org emma</div>
-                        <pre class="vpanel-body"><span class="v-ok">●</span> lead-insight-hub          <span class="v-dim">live</span>
-<span class="v-ok">●</span> enterprise-deal-commander <span class="v-dim">live</span>
-<span class="v-ok">●</span> <span class="v-amber">+11 more projects</span>         <span class="v-dim">live</span>
-<span class="v-dim">functions · datastore · cron</span></pre>
-                    </div>
-                    <div class="file-nav">
-                        <button data-open="projects/zoho-crm-core.md">← zoho-crm-core.md</button>
                         <button data-open="projects/earlier-work.md">earlier-work.md →</button>
                     </div>
                 </section>
@@ -1617,7 +1626,7 @@ cache <span class="v-dim">L1 in-proc →</span> <span class="v-data">L2 redis</s
                         </div>
                     </div>
                     <div class="file-nav">
-                        <button data-open="projects/catalyst-fleet.md">← catalyst-fleet.md</button>
+                        <button data-open="projects/zoho-crm-core.md">← zoho-crm-core.md</button>
                         <button data-open="achievements.md">achievements.md →</button>
                     </div>
                 </section>
@@ -1795,7 +1804,7 @@ cache <span class="v-dim">L1 in-proc →</span> <span class="v-data">L2 redis</s
         const FILE_ORDER = [
             'README.md', 'about.md', 'experience.md', 'skills.json',
             'projects/crm-mcp-server.md', 'projects/ai-browser.md',
-            'projects/zoho-crm-core.md', 'projects/catalyst-fleet.md',
+            'projects/zoho-crm-core.md',
             'projects/earlier-work.md', 'achievements.md', 'education.md', 'contact.md'
         ];
         const FILE_ICON = f => f.endsWith('.json') ? 'fas fa-code' : 'fab fa-markdown';
