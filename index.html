@@ -1070,6 +1070,7 @@
                         <li><button class="tree-item" data-open="projects/crm-mcp-server.md"><i class="fab fa-markdown"></i>crm-mcp-server.md</button></li>
                         <li><button class="tree-item" data-open="projects/ai-browser.md"><i class="fab fa-markdown"></i>ai-browser.md</button></li>
                         <li><button class="tree-item" data-open="projects/zoho-crm-core.md"><i class="fab fa-markdown"></i>zoho-crm-core.md</button></li>
+                        <li><button class="tree-item" data-open="projects/product-management.md"><i class="fab fa-markdown"></i>product-management.md</button></li>
                         <li><button class="tree-item" data-open="projects/earlier-work.md"><i class="fab fa-markdown"></i>earlier-work.md</button></li>
                     </ul>
                 </li>
@@ -1564,7 +1565,7 @@
                     </p>
                     <h2 class="md-h2"><span class="hash">##</span>What I actually touch</h2>
                     <ul class="md-ul">
-                        <li><strong>crmmeta query engine</strong> — the metadata layer that turns module and field definitions into SQL, with every org isolated by tenant (ZGID) in a single multi-tenant deployment.</li>
+                        <li><strong>crmmeta query engine</strong> — the metadata layer that turns module and field definitions into SQL, with every org isolated by tenant in a single multi-tenant deployment.</li>
                         <li><strong>AdventNet persistence + DS Query</strong> — the in-house ORM and SQL DSL used across 5,000+ files of the codebase; I work on the query paths everything else sits on.</li>
                         <li><strong>Caching &amp; performance</strong> — multi-tier caching (in-process + Redis) and query optimization that cut key response times by up to 30% in production.</li>
                         <li><strong>Platform plumbing at scale</strong> — Struts2 routing across 18 config files covering API v2–v10, Spring MVC with AOP interceptors, Kafka events, gRPC services, and Hystrix circuit breakers.</li>
@@ -1578,12 +1579,46 @@
                         <div class="vpanel-head"><span class="dot"></span> crmmeta · query engine</div>
                         <pre class="vpanel-body"><span class="v-dim">ds-query → sql</span>
 <span class="v-amber">SELECT</span> fields <span class="v-amber">FROM</span> CRM_FIELDS
-  ⋈ CRM_MODULES <span class="v-dim">(tenant: ZGID)</span>
+  ⋈ CRM_MODULES <span class="v-dim">(tenant)</span>
 cache <span class="v-dim">L1 in-proc →</span> <span class="v-data">L2 redis</span>
 <span class="v-ok">✓ hot paths −30% response time</span></pre>
                     </div>
                     <div class="file-nav">
                         <button data-open="projects/ai-browser.md">← ai-browser.md</button>
+                        <button data-open="projects/product-management.md">product-management.md →</button>
+                    </div>
+                </section>
+
+                <!-- projects/product-management.md -->
+                <section class="pane" id="pane-projects/product-management.md">
+                    <p class="crumb">~ <span class="sep">›</span> gokul <span class="sep">›</span> projects <span class="sep">›</span> <span class="cur">product-management.md</span></p>
+                    <p class="proj-meta">java · mvc · internal client framework · zoho internship (mar–jun 2022)</p>
+                    <h1 class="md-h1">Product Management App</h1>
+                    <p class="md-p">
+                        The internship project: picked up Zoho's internal client framework from scratch
+                        and built a complete product management application on Java MVC — recommendations,
+                        ratings, and quoting included. Built during the internship that converted into the full-time role.
+                    </p>
+                    <h2 class="md-h2"><span class="hash">##</span>Highlights</h2>
+                    <ul class="md-ul">
+                        <li><strong>Internal framework, learned cold</strong> — ramped up on an in-house client framework with zero prior exposure and shipped a working application on it within the internship window.</li>
+                        <li><strong>Product suggestions</strong> — a recommendation module that ranks products by a blend of user ratings and price.</li>
+                        <li><strong>A ratings feedback loop</strong> — product ratings improve as users purchase and review, so the catalog gets more trustworthy the more it's used.</li>
+                        <li><strong>Quotes &amp; dynamic discounts</strong> — quote generation tied to user profile ratings: stronger profiles unlock better discounts.</li>
+                        <li><strong>Requirements → features</strong> — translated business requirements into REST-aligned backend modules: recommendations, the discount engine, and the rating system.</li>
+                    </ul>
+                    <div class="tech-row"><span>Java</span><span>MVC</span><span>Internal Framework</span><span>REST APIs</span></div>
+                    <div class="vpanel" aria-hidden="true">
+                        <div class="vpanel-head"><span class="dot"></span> product-mgmt · behavior flow</div>
+                        <pre class="vpanel-body"><span class="v-amber">&gt;</span> suggest(user)
+rank: rating ⋈ price
+purchase → review → <span class="v-data">rating ↑</span>
+<span class="v-amber">&gt;</span> quote(user)
+profile ↑ → <span class="v-data">discount ↑</span>
+<span class="v-ok">✓</span> modules: suggest · rate · quote</pre>
+                    </div>
+                    <div class="file-nav">
+                        <button data-open="projects/zoho-crm-core.md">← zoho-crm-core.md</button>
                         <button data-open="projects/earlier-work.md">earlier-work.md →</button>
                     </div>
                 </section>
@@ -1626,7 +1661,7 @@ cache <span class="v-dim">L1 in-proc →</span> <span class="v-data">L2 redis</s
                         </div>
                     </div>
                     <div class="file-nav">
-                        <button data-open="projects/zoho-crm-core.md">← zoho-crm-core.md</button>
+                        <button data-open="projects/product-management.md">← product-management.md</button>
                         <button data-open="achievements.md">achievements.md →</button>
                     </div>
                 </section>
@@ -1804,7 +1839,7 @@ cache <span class="v-dim">L1 in-proc →</span> <span class="v-data">L2 redis</s
         const FILE_ORDER = [
             'README.md', 'about.md', 'experience.md', 'skills.json',
             'projects/crm-mcp-server.md', 'projects/ai-browser.md',
-            'projects/zoho-crm-core.md',
+            'projects/zoho-crm-core.md', 'projects/product-management.md',
             'projects/earlier-work.md', 'achievements.md', 'education.md', 'contact.md'
         ];
         const FILE_ICON = f => f.endsWith('.json') ? 'fas fa-code' : 'fab fa-markdown';
