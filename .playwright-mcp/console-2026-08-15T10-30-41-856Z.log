@@ -1,0 +1,6 @@
+[      47ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8123/manifest.json:0
+[      47ms] [ERROR] Manifest fetch from http://localhost:8123/manifest.json failed, code 404 @ http://localhost:8123/index.html:0
+[     225ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8123/manifest.json:0
+[     225ms] [ERROR] Manifest fetch from http://localhost:8123/manifest.json failed, code 404 @ http://localhost:8123/index.html:0
+[     225ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8123/favicon.ico:0
+[    6990ms] [ERROR] Failed to load resource: the server responded with a status of 503 () @ https://github-readme-stats.vercel.app/api?username=gokul2507&show_icons=true&theme=tokyonight&hide_border=true&bg_color=1a1a2e&title_color=00d4ff&icon_color=7c3aed&text_color=a1a1aa:0
