@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Gokul Rajendiran</title>
+<meta name="description" content="Selected projects by Gokul Rajendiran — a 128-tool MCP server for Zoho CRM, a dual-engine browser for AI agents, CRM platform internals, and earlier work.">
+<link rel="canonical" href="https://projects.gokulrajendiran.dev/">
+<link rel="apple-touch-icon" href="https://gokulrajendiran.dev/apple-touch-icon.png">
+<link rel="icon" href="https://gokulrajendiran.dev/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Gokul Rajendiran">
+<meta property="og:title" content="Projects — Gokul Rajendiran">
+<meta property="og:description" content="Selected projects: CRM MCP Server, AI Browser + claude-web-bridge, Zoho CRM Core, and more.">
+<meta property="og:url" content="https://projects.gokulrajendiran.dev/">
+<meta property="og:image" content="https://gokulrajendiran.dev/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --chrome: #0B0A07;
+    --editor: #14110C;
+    --card: #1A160F;
+    --card-hover: #201B12;
+    --accent: #FFB224;
+    --accent-ink: #181204;
+    --text: #EDE7DB;
+    --muted: #6F6858;
+    --border: #2B251A;
+    --glow: rgba(255, 178, 36, 0.10);
+    --hue-teal: #79B8A8;
+    --hue-violet: #A594CF;
+    --hue-green: #8FBA84;
+    --hue-amber: #E5A93C;
+    --hue-slate: #93A3C9;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --chrome: #EFE9DC;
+      --editor: #FAF6EE;
+      --card: #FFFFFF;
+      --card-hover: #FBF7EE;
+      --accent: #A16207;
+      --accent-ink: #181204;
+      --text: #211C13;
+      --muted: #8B8270;
+      --border: #DDD3BF;
+      --glow: rgba(161, 98, 7, 0.08);
+      --hue-teal: #2E7D6E;
+      --hue-violet: #6D5AA8;
+      --hue-green: #4E7D43;
+      --hue-amber: #A16207;
+      --hue-slate: #4E608F;
+    }
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    background: var(--editor);
+    color: var(--text);
+    font-family: 'Inter', system-ui, sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  a { color: inherit; text-decoration: none; }
+  .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+
+  header {
+    background: var(--chrome);
+    border-bottom: 1px solid var(--border);
+  }
+  .bar {
+    max-width: 1080px; margin: 0 auto; padding: 0.85rem 1.25rem;
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    font-size: 0.8rem;
+  }
+  .bar .path { color: var(--muted); }
+  .bar .path b { color: var(--accent); font-weight: 500; }
+  .bar nav { display: flex; gap: 1.25rem; }
+  .bar nav a { color: var(--muted); transition: color .15s; }
+  .bar nav a:hover { color: var(--text); }
+
+  main { flex: 1; width: 100%; max-width: 1080px; margin: 0 auto; padding: 3.5rem 1.25rem 4rem; }
+
+  .hero { margin-bottom: 3rem; }
+  .hero .kicker { color: var(--accent); font-size: 0.75rem; letter-spacing: .08em; text-transform: uppercase; }
+  .hero h1 {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    font-weight: 700; line-height: 1.1; letter-spacing: -0.02em;
+    margin: 0.6rem 0 1rem;
+  }
+  .hero p { color: var(--muted); max-width: 60ch; font-size: 1.05rem; }
+  .hero p a { color: var(--text); border-bottom: 1px solid var(--border); }
+  .hero p a:hover { border-color: var(--accent); }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+  }
+  .card {
+    display: flex; flex-direction: column; gap: 0.75rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.4rem 1.4rem 1.25rem;
+    position: relative;
+    transition: background .15s, border-color .15s, transform .15s, box-shadow .15s;
+  }
+  .card:hover {
+    background: var(--card-hover);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px -16px var(--glow), 0 0 0 4px var(--glow);
+  }
+  .card.featured { grid-column: 1 / -1; }
+  @media (min-width: 720px) {
+    .card.featured { display: grid; grid-template-columns: 1.2fr 1fr; gap: 1.5rem 2.5rem; align-items: start; }
+    .card.featured .head, .card.featured .desc { grid-column: 1; }
+    .card.featured .facts { grid-column: 2; grid-row: 1 / span 2; margin: 0; }
+    .card.featured .foot { grid-column: 1 / -1; }
+  }
+  .head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
+  .card h2 {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em;
+  }
+  .tag { font-size: 0.68rem; letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; }
+  .tag.teal { color: var(--hue-teal); } .tag.violet { color: var(--hue-violet); }
+  .tag.green { color: var(--hue-green); } .tag.amber { color: var(--hue-amber); } .tag.slate { color: var(--hue-slate); }
+  .desc { color: var(--muted); font-size: 0.95rem; }
+  .facts { list-style: none; display: flex; flex-direction: column; gap: 0.45rem; margin-top: 0.25rem; }
+  .facts li { font-size: 0.86rem; padding-left: 1.1rem; position: relative; }
+  .facts li::before { content: "›"; position: absolute; left: 0; color: var(--accent); }
+  .foot { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; align-items: center; margin-top: auto; padding-top: 0.5rem; font-size: 0.78rem; }
+  .stack { color: var(--muted); flex: 1; }
+  .link { color: var(--accent); font-weight: 500; white-space: nowrap; }
+  .link:hover { text-decoration: underline; }
+
+  footer { border-top: 1px solid var(--border); background: var(--chrome); }
+  footer .bar { color: var(--muted); }
+  footer .bar a { color: var(--muted); }
+  footer .bar a:hover { color: var(--text); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bar mono">
+    <a class="path" href="https://gokulrajendiran.dev/">~ › <b>gokul</b> › projects</a>
+    <nav>
+      <a href="https://gokulrajendiran.dev/">portfolio</a>
+      <a href="https://github.com/gokul2507" target="_blank" rel="noopener">github</a>
+      <a href="https://www.linkedin.com/in/gokulrajendiran/" target="_blank" rel="noopener">linkedin</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="kicker mono">projects.gokulrajendiran.dev</div>
+    <h1>Things I've built.</h1>
+    <p>Platform internals at Zoho CRM by day; tooling that lets AI agents work inside real codebases and real browsers the rest of the time. Full write-ups live on <a href="https://gokulrajendiran.dev/">gokulrajendiran.dev</a>.</p>
+  </section>
+
+  <section class="grid">
+
+    <article class="card featured">
+      <div class="head">
+        <h2>CRM MCP Server</h2>
+        <span class="tag mono teal">python · fastmcp</span>
+      </div>
+      <p class="desc">A Model Context Protocol server that gives AI agents deep access to Zoho CRM's million-line codebase — with a self-learning usage layer, a knowledge graph, and a Java AST index covering 17,000 classes.</p>
+      <ul class="facts">
+        <li><b>128 tools across 28 groups</b> — code search, ORM/DS-Query helpers, metadata lookups, knowledge-graph queries.</li>
+        <li><b>Java AST index</b> — 17,165 classes and 233,000+ methods parsed so agents jump straight to definitions.</li>
+        <li><b>Self-learning layer</b> — an aiosqlite usage store ranks tools by how much they actually help.</li>
+        <li><b>STDIO, SSE and streamable HTTP</b> transports, so any MCP client can connect.</li>
+      </ul>
+      <div class="foot mono">
+        <span class="stack">python · fastmcp · aiosqlite · tree-sitter</span>
+        <a class="link" href="https://gokulrajendiran.dev/#projects/crm-mcp-server.md">read the write-up →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="head">
+        <h2>AI Browser + claude-web-bridge</h2>
+        <span class="tag mono violet">typescript</span>
+      </div>
+      <p class="desc">A dual-engine browser for AI agents — Lightpanda for speed, Chromium over CDP for fidelity — plus a Manifest V3 extension that lets Claude drive the user's own logged-in browser.</p>
+      <ul class="facts">
+        <li>Two engines behind one API; the agent never cares which is underneath.</li>
+        <li>Click-by-text, shadow-DOM-aware fills, drag-and-drop, a11y-tree snapshots, network-idle waits.</li>
+        <li>Bridge extension drives real sessions via <span class="mono">chrome.debugger</span>.</li>
+      </ul>
+      <div class="foot mono">
+        <span class="stack">typescript · lightpanda · cdp · mv3</span>
+        <a class="link" href="https://gokulrajendiran.dev/#projects/ai-browser.md">write-up →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="head">
+        <h2>Zoho CRM Core Platform</h2>
+        <span class="tag mono green">java · day job</span>
+      </div>
+      <p class="desc">The metadata and query internals of Zoho CRM — a 17,000-class multi-tenant SaaS. I work on the crmmeta query engine and module customization.</p>
+      <ul class="facts">
+        <li>crmmeta query engine — module and field definitions to SQL, tenant-isolated.</li>
+        <li>In-house ORM + DS Query DSL used across 5,000+ files.</li>
+        <li>Multi-tier caching and query tuning that cut key response times by up to 30%.</li>
+      </ul>
+      <div class="foot mono">
+        <span class="stack">java · struts2 / spring · postgresql · redis · kafka</span>
+        <a class="link" href="https://gokulrajendiran.dev/#projects/zoho-crm-core.md">write-up →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="head">
+        <h2>Product Management App</h2>
+        <span class="tag mono amber">java · mvc</span>
+      </div>
+      <p class="desc">The internship project (Mar–Jun 2022): learned Zoho's internal client framework cold and shipped a complete product management app — recommendations, ratings, and quoting included.</p>
+      <ul class="facts">
+        <li>Recommendation module ranking products by ratings and price.</li>
+        <li>Ratings feedback loop that improves the catalog with use.</li>
+        <li>Quote generation with profile-based dynamic discounts.</li>
+      </ul>
+      <div class="foot mono">
+        <span class="stack">java · mvc · internal client framework</span>
+        <a class="link" href="https://gokulrajendiran.dev/#projects/product-management.md">write-up →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="head">
+        <h2>Earlier Work</h2>
+        <span class="tag mono slate">hackathons · college</span>
+      </div>
+      <p class="desc">Hackathon and college projects from before the day job.</p>
+      <ul class="facts">
+        <li><b>Stock Market Prediction</b> — LSTM forecasting at Smart India Hackathon, 90% accuracy.</li>
+        <li><b>Grab Scrap</b> — circular-economy scrap exchange, IBM WIT Hackathon.</li>
+        <li><b>Online Land Registration</b>, <b>Research Paper Repository</b>, <b>Lambs and Tiger</b>.</li>
+      </ul>
+      <div class="foot mono">
+        <span class="stack">python · tensorflow · django · jsp · node.js</span>
+        <a class="link" href="https://gokulrajendiran.dev/#projects/earlier-work.md">write-up →</a>
+      </div>
+    </article>
+
+  </section>
+</main>
+
+<footer>
+  <div class="bar mono">
+    <span>© <span id="year">2026</span> Gokul Rajendiran</span>
+    <a href="mailto:srigokulrajendiran@gmail.com">srigokulrajendiran@gmail.com</a>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

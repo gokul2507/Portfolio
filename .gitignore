@@ -1,2 +1,4 @@
 .playwright-mcp/
 .vscode/
+Certificates/
+.DS_Store
