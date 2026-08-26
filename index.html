@@ -416,6 +416,26 @@
         .statement em { font-style: normal; color: var(--accent); box-shadow: inset 0 -2px 0 var(--accent); }
 
         /* badges (README) */
+        /* certifications.md */
+        .cert-list { display: flex; flex-direction: column; gap: 0.5rem; margin: 1rem 0 1.9rem; }
+        .cert { display: flex; align-items: center; flex-wrap: wrap; gap: 0.75rem 0.9rem; background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 0.7rem 0.95rem; transition: border-color 0.2s, transform 0.2s; }
+        .cert:hover { border-color: var(--accent); transform: translateX(3px); }
+        .cert-ic { width: 34px; height: 34px; min-width: 34px; border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; background: var(--glow); color: var(--accent); }
+        .cert-ic.gold { background: color-mix(in srgb, var(--hue-amber) 14%, transparent); color: var(--hue-amber); }
+        .cert-ic.blue { background: color-mix(in srgb, var(--hue-teal) 14%, transparent); color: var(--hue-teal); }
+        .cert-ic.purple { background: color-mix(in srgb, var(--hue-violet) 14%, transparent); color: var(--hue-violet); }
+        .cert-ic.green { background: color-mix(in srgb, var(--hue-green) 14%, transparent); color: var(--hue-green); }
+        .cert-ic.slate { background: color-mix(in srgb, var(--hue-slate) 14%, transparent); color: var(--hue-slate); }
+        .cert-body { flex: 1 1 220px; min-width: 0; }
+        .cert-title { display: block; font-size: 0.9rem; font-weight: 600; line-height: 1.35; }
+        .cert-meta { display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.69rem; color: var(--muted); margin-top: 0.2rem; }
+        .cert-meta a { color: var(--muted); border-bottom: 1px dotted var(--border); }
+        .cert-meta a:hover { color: var(--accent); border-color: var(--accent); }
+        .cert-links { display: flex; gap: 0.45rem; margin-left: auto; font-family: 'JetBrains Mono', monospace; font-size: 0.69rem; white-space: nowrap; }
+        .cert-links a { color: var(--text-2); border: 1px solid var(--border); border-radius: 4px; padding: 0.24rem 0.55rem; transition: border-color 0.2s, color 0.2s; }
+        .cert-links a:hover { color: var(--accent); border-color: var(--accent); }
+        .cert-more { font-size: 0.82rem; color: var(--text-2); line-height: 1.6; margin: -0.9rem 0 1.9rem; }
+        .cert-more code { font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; color: var(--muted); }
         .badges { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.75rem; }
 
         .badge {
@@ -1102,6 +1122,7 @@
                     </ul>
                 </li>
                 <li><button class="tree-item" data-open="achievements.md"><i class="fab fa-markdown"></i>achievements.md</button></li>
+                <li><button class="tree-item" data-open="certifications.md"><i class="fab fa-markdown"></i>certifications.md</button></li>
                 <li><button class="tree-item" data-open="education.md"><i class="fab fa-markdown"></i>education.md</button></li>
                 <li><button class="tree-item" data-open="contact.md"><i class="fab fa-markdown"></i>contact.md</button></li>
                 <li><a class="tree-item" href="Gokul_Rajendiran.pdf" download><i class="fas fa-file-pdf"></i>resume.pdf</a></li>
@@ -1704,11 +1725,11 @@ profile ↑ → <span class="v-data">discount ↑</span>
                         </div>
                         <div class="rcard">
                             <div class="rcard-ic blue"><i class="fas fa-code"></i></div>
-                            <div><h4>TCS Code Vita</h4><p>One among 3 selected from 2nd year in RMK Group</p></div>
+                            <div><h4>TCS CodeVita Season 9</h4><p>Cleared Round 1 (Aug 2020) — one among 3 selected from 2nd year in RMK Group</p></div>
                         </div>
                         <div class="rcard">
                             <div class="rcard-ic purple"><i class="fas fa-microphone"></i></div>
-                            <div><h4>International Conference</h4><p>Paper on Facial Expression Recognition using Multimodal Sensors</p></div>
+                            <div><h4>International Conference — ICRACE'20</h4><p>Presented “Facial Expression Recognition System using Multimodal Sensors” at Velammal Institute of Technology, Mar 2020</p></div>
                         </div>
                         <div class="rcard">
                             <div class="rcard-ic green"><i class="fas fa-cloud"></i></div>
@@ -1716,7 +1737,7 @@ profile ↑ → <span class="v-data">discount ↑</span>
                         </div>
                         <div class="rcard">
                             <div class="rcard-ic blue"><i class="fab fa-google"></i></div>
-                            <div><h4>Google Cloud Associate</h4><p>Google Cloud APIs and Project Based Services</p></div>
+                            <div><h4>Google Cloud Engineer Track</h4><p>Completed the 6-course Google Cloud specialization on Coursera — Core Infrastructure through Reliable Design &amp; Process, plus the ACE exam prep course</p></div>
                         </div>
                         <div class="rcard">
                             <div class="rcard-ic gold"><i class="fas fa-lightbulb"></i></div>
@@ -1737,7 +1758,7 @@ profile ↑ → <span class="v-data">discount ↑</span>
                             <h3 class="profile-name">HackerRank</h3>
                             <div class="profile-stat" data-count="4" data-suffix="+">0</div>
                             <p class="profile-detail">Badges Earned</p>
-                            <p class="profile-detail ok">5+ Certificates</p>
+                            <p class="profile-detail ok">4 Skill Certificates</p>
                         </div>
                         <div class="profile-card">
                             <div class="profile-icon"><i class="fas fa-code"></i></div>
@@ -1756,6 +1777,223 @@ profile ↑ → <span class="v-data">discount ↑</span>
                     </div>
                     <div class="file-nav">
                         <button data-open="projects/earlier-work.md">← earlier-work.md</button>
+                        <button data-open="certifications.md">certifications.md →</button>
+                    </div>
+                </section>
+
+                <!-- certifications.md -->
+                <section class="pane" id="pane-certifications.md">
+                    <p class="crumb">~ <span class="sep">›</span> gokul <span class="sep">›</span> <span class="cur">certifications.md</span></p>
+                    <h1 class="md-h1">Certifications</h1>
+                    <p class="md-p">Every certificate I hold, grouped by what it proves. <strong>view</strong> opens my copy of the certificate; <strong>verify ↗</strong> goes to the issuer's own verification page where one exists.</p>
+                    <div class="badges">
+                        <span class="badge"><span class="k">total</span><span class="v">75+ certificates</span></span>
+                        <span class="badge"><span class="k">cloud</span><span class="v">Oracle · Google Cloud · Azure</span></span>
+                        <span class="badge"><span class="k">skillrack</span><span class="v">45 · 2× rank #1</span></span>
+                        <span class="badge"><span class="k">hackerrank</span><span class="v">4 skill certs</span></span>
+                    </div>
+
+                    <h2 class="md-h2"><span class="hash">##</span>Cloud &amp; platform</h2>
+                    <div class="cert-list">
+                        <div class="cert">
+                            <span class="cert-ic gold"><i class="fas fa-cloud"></i></span>
+                            <span class="cert-body"><span class="cert-title">Oracle Cloud Infrastructure Foundations 2021 Certified Associate</span><span class="cert-meta">Oracle · Dec 2021 · ID 289559662OCIBF2021</span></span>
+                            <span class="cert-links"><a href="certs/oracle-oci-foundations-2021-associate.pdf" target="_blank" rel="noopener">view</a></span>
+                        </div>
+                        <div class="cert">
+                            <span class="cert-ic blue"><i class="fab fa-google"></i></span>
+                            <span class="cert-body"><span class="cert-title">Google Cloud Fundamentals: Core Infrastructure</span><span class="cert-meta">Google Cloud · Coursera · Nov 2021</span></span>
+                            <span class="cert-links"><a href="certs/gcp-fundamentals-core-infrastructure.pdf" target="_blank" rel="noopener">view</a><a href="https://coursera.org/verify/ZKLFF788VCGS" target="_blank" rel="noopener">verify ↗</a></span>
+                        </div>
+                        <div class="cert">
+                            <span class="cert-ic blue"><i class="fab fa-google"></i></span>
+                            <span class="cert-body"><span class="cert-title">Essential Google Cloud Infrastructure: Foundation</span><span class="cert-meta">Google Cloud · Coursera · Nov 2021</span></span>
+                            <span class="cert-links"><a href="certs/gcp-essential-infrastructure-foundation.pdf" target="_blank" rel="noopener">view</a><a href="https://coursera.org/verify/TSRNM54LLJGQ" target="_blank" rel="noopener">verify ↗</a></span>
+                        </div>
+                        <div class="cert">
+                            <span class="cert-ic blue"><i class="fab fa-google"></i></span>
+                            <span class="cert-body"><span class="cert-title">Essential Google Cloud Infrastructure: Core Services</span><span class="cert-meta">Google Cloud · Coursera · Dec 2021</span></span>
+                            <span class="cert-links"><a href="certs/gcp-essential-infrastructure-core-services.pdf" target="_blank" rel="noopener">view</a><a href="https://coursera.org/verify/8H2VHT8VLTAS" target="_blank" rel="noopener">verify ↗</a></span>
+                        </div>
+                        <div class="cert">
+                            <span class="cert-ic blue"><i class="fab fa-google"></i></span>
+                            <span class="cert-body"><span class="cert-title">Elastic Google Cloud Infrastructure: Scaling and Automation</span><span class="cert-meta">Google Cloud · Coursera · Dec 2021</span></span>
+                            <span class="cert-links"><a href="certs/gcp-elastic-infrastructure-scaling-automation.pdf" target="_blank" rel="noopener">view</a><a href="https://coursera.org/verify/UAEUWZPYDGQW" target="_blank" rel="noopener">verify ↗</a></span>
+                        </div>
+                        <div class="cert">
+                            <span class="cert-ic blue"><i class="fab fa-google"></i></span>
+                            <span class="cert-body"><span class="cert-title">Reliable Google Cloud Infrastructure: Design and Process</span><span class="cert-meta">Google Cloud · Coursera · Jan 2022</span></span>
+                            <span class="cert-links"><a href="certs/gcp-reliable-infrastructure-design-process.pdf" target="_blank" rel="noopener">view</a><a href="https://coursera.org/verify/GWZVMA9QNZA3" target="_blank" rel="noopener">verify ↗</a></span>
+                        </div>
+                        <div class="cert">
+                            <span class="cert-ic blue"><i class="fab fa-google"></i></span>
+                            <span class="cert-body"><span class="cert-title">Preparing for the Google Cloud Associate Cloud Engineer Exam</span><span class="cert-meta">Google Cloud · Coursera · Dec 2021</span></span>
+                            <span class="cert-links"><a href="certs/gcp-preparing-associate-cloud-engineer.pdf" target="_blank" rel="noopener">view</a><a href="https://coursera.org/verify/CKERTTEMPLFU" target="_blank" rel="noopener">verify ↗</a></span>
+                        </div>
+                        <div class="cert">
+                            <span class="cert-ic blue"><i class="fab fa-microsoft"></i></span>
+                            <span class="cert-body"><span class="cert-title">Machine Learning Pipelines with Azure ML Studio</span><span class="cert-meta">Coursera Project Network · May 2021</span></span>
+                            <span class="cert-links"><a href="certs/coursera-ml-pipelines-azure-ml-studio.pdf" target="_blank" rel="noopener">view</a><a href="https://coursera.org/verify/HZQAMANDEA2J" target="_blank" rel="noopener">verify ↗</a></span>
+                        </div>
+                    </div>
+
+                    <h2 class="md-h2"><span class="hash">##</span>Programming, data &amp; ML</h2>
+                    <div class="cert-list">
+                        <div class="cert">
+                            <span class="cert-ic green"><i class="fab fa-python"></i></span>
+                            <span class="cert-body"><span class="cert-title">Crash Course on Python</span><span class="cert-meta">Google · Coursera · Mar 2021</span></span>
+                            <span class="cert-links"><a href="certs/google-crash-course-on-python.pdf" target="_blank" rel="noopener">view</a><a href="https://coursera.org/verify/3PXDRGPD5EPQ" target="_blank" rel="noopener">verify ↗</a></span>
+                        </div>
+                        <div class="cert">
+                            <span class="cert-ic green"><i class="fas fa-chart-line"></i></span>
+                            <span class="cert-body"><span class="cert-title">Foundations: Data, Data, Everywhere</span><span class="cert-meta">Google Data Analytics · Coursera · Aug 2021</span></span>
+                            <span class="cert-links"><a href="certs/google-data-analytics-foundations.pdf" target="_blank" rel="noopener">view</a><a href="https://coursera.org/verify/Y8YPX2UT53U6" target="_blank" rel="noopener">verify ↗</a></span>
+                        </div>
+                        <div class="cert">
+                            <span class="cert-ic green"><i class="fas fa-brain"></i></span>
+                            <span class="cert-body"><span class="cert-title">Machine Learning Foundations: A Case Study Approach</span><span class="cert-meta">University of Washington · Coursera · Aug 2021</span></span>
+                            <span class="cert-links"><a href="certs/uw-machine-learning-foundations.pdf" target="_blank" rel="noopener">view</a><a href="https://coursera.org/verify/CGJ6DMALZ4U5" target="_blank" rel="noopener">verify ↗</a></span>
+                        </div>
+                        <div class="cert">
+                            <span class="cert-ic green"><i class="fas fa-code"></i></span>
+                            <span class="cert-body"><span class="cert-title">Problem Solving through Programming in C</span><span class="cert-meta">NPTEL · IIT Kharagpur · 12-week course · Jan–Apr 2020</span></span>
+                            <span class="cert-links"><a href="certs/nptel-problem-solving-programming-in-c.jpg" target="_blank" rel="noopener">view</a></span>
+                        </div>
+                        <div class="cert">
+                            <span class="cert-ic green"><i class="fas fa-code"></i></span>
+                            <span class="cert-body"><span class="cert-title">Learn and Master C Programming for Absolute Beginners</span><span class="cert-meta">Infosys Springboard · Jan 2022</span></span>
+                            <span class="cert-links"><a href="certs/infosys-springboard-master-c-programming.pdf" target="_blank" rel="noopener">view</a></span>
+                        </div>
+                        <div class="cert">
+                            <span class="cert-ic green"><i class="fas fa-face-smile"></i></span>
+                            <span class="cert-body"><span class="cert-title">Build a Face Recognition Application using Python</span><span class="cert-meta">GUVI · AI-For-India event · Apr 2021</span></span>
+                            <span class="cert-links"><a href="certs/guvi-face-recognition-python.jpg" target="_blank" rel="noopener">view</a><a href="https://www.guvi.in/certificate?id=L63nXWl5817Qz69101" target="_blank" rel="noopener">verify ↗</a></span>
+                        </div>
+                        <div class="cert">
+                            <span class="cert-ic green"><i class="fas fa-brain"></i></span>
+                            <span class="cert-body"><span class="cert-title">Python and Deep Learning — 7-day bootcamp</span><span class="cert-meta">ShapeAI × Developer Student Clubs, BIT Mesra · 2021</span></span>
+                            <span class="cert-links"><a href="certs/shapeai-python-deep-learning.pdf" target="_blank" rel="noopener">view</a><a href="https://cert.shapeai.tech/verify/ZshqJc" target="_blank" rel="noopener">verify ↗</a></span>
+                        </div>
+                        <div class="cert">
+                            <span class="cert-ic green"><i class="fab fa-react"></i></span>
+                            <span class="cert-body"><span class="cert-title">Basic Web Development with JS &amp; React JS — 7-day bootcamp</span><span class="cert-meta">ShapeAI · 2021</span></span>
+                            <span class="cert-links"><a href="certs/shapeai-web-development-js-react.pdf" target="_blank" rel="noopener">view</a><a href="https://cert.shapeai.tech/verify/1qX3DK" target="_blank" rel="noopener">verify ↗</a></span>
+                        </div>
+                        <div class="cert">
+                            <span class="cert-ic green"><i class="fab fa-html5"></i></span>
+                            <span class="cert-body"><span class="cert-title">Portfolio using HTML &amp; CSS — 7-day bootcamp</span><span class="cert-meta">ShapeAI × GDG Ranchi · 2021</span></span>
+                            <span class="cert-links"><a href="certs/shapeai-portfolio-html-css.pdf" target="_blank" rel="noopener">view</a><a href="https://cert.shapeai.tech/verify/Zt4COg" target="_blank" rel="noopener">verify ↗</a></span>
+                        </div>
+                    </div>
+
+                    <h2 class="md-h2"><span class="hash">##</span>Skill assessments</h2>
+                    <div class="cert-list">
+                        <div class="cert">
+                            <span class="cert-ic purple"><i class="fab fa-hackerrank"></i></span>
+                            <span class="cert-body"><span class="cert-title">HackerRank — JavaScript (Intermediate)</span><span class="cert-meta">Jul 2021 · ID 29C6ABB5D447</span></span>
+                            <span class="cert-links"><a href="certs/hackerrank-javascript-intermediate.jpg" target="_blank" rel="noopener">view</a><a href="https://www.hackerrank.com/certificates/29c6abb5d447" target="_blank" rel="noopener">verify ↗</a></span>
+                        </div>
+                        <div class="cert">
+                            <span class="cert-ic purple"><i class="fab fa-hackerrank"></i></span>
+                            <span class="cert-body"><span class="cert-title">HackerRank — SQL (Basic)</span><span class="cert-meta">Jul 2021 · ID 1B9638B19B33</span></span>
+                            <span class="cert-links"><a href="certs/hackerrank-sql-basic.jpg" target="_blank" rel="noopener">view</a><a href="https://www.hackerrank.com/certificates/1b9638b19b33" target="_blank" rel="noopener">verify ↗</a></span>
+                        </div>
+                        <div class="cert">
+                            <span class="cert-ic purple"><i class="fab fa-hackerrank"></i></span>
+                            <span class="cert-body"><span class="cert-title">HackerRank — Python (Basic)</span><span class="cert-meta">Jun 2020 · ID 1CDFDDAAAD16</span></span>
+                            <span class="cert-links"><a href="certs/hackerrank-python-basic.jpg" target="_blank" rel="noopener">view</a><a href="https://www.hackerrank.com/certificates/1cdfddaaad16" target="_blank" rel="noopener">verify ↗</a></span>
+                        </div>
+                        <div class="cert">
+                            <span class="cert-ic purple"><i class="fab fa-hackerrank"></i></span>
+                            <span class="cert-body"><span class="cert-title">HackerRank — Problem Solving (Basic)</span><span class="cert-meta">Jun 2020 · ID 7D7ADD7095FC</span></span>
+                            <span class="cert-links"><a href="certs/hackerrank-problem-solving-basic.jpg" target="_blank" rel="noopener">view</a><a href="https://www.hackerrank.com/certificates/7d7add7095fc" target="_blank" rel="noopener">verify ↗</a></span>
+                        </div>
+                        <div class="cert">
+                            <span class="cert-ic purple"><i class="fas fa-clipboard-check"></i></span>
+                            <span class="cert-body"><span class="cert-title">AMCAT Employability Assessment</span><span class="cert-meta">Aspiring Minds · Oct 2020 · certified for <a href="certs/amcat-business-analyst.jpg" target="_blank" rel="noopener">Business Analyst</a> · <a href="certs/amcat-business-consultant.jpg" target="_blank" rel="noopener">Business Consultant</a> · <a href="certs/amcat-english-comprehension.jpg" target="_blank" rel="noopener">English Comprehension</a> · <a href="certs/amcat-proficiency-in-english.jpg" target="_blank" rel="noopener">Proficiency in English</a></span></span>
+                        </div>
+                    </div>
+
+                    <h2 class="md-h2"><span class="hash">##</span>SkillRack <span class="v-dim" style="font-size:0.75rem">45 certificates · highlights</span></h2>
+                    <div class="cert-list">
+                        <div class="cert">
+                            <span class="cert-ic gold"><i class="fas fa-ranking-star"></i></span>
+                            <span class="cert-body"><span class="cert-title">Programming Level 001 — Rank 1 / 296</span><span class="cert-meta">SkillRack · Jan 2021</span></span>
+                            <span class="cert-links"><a href="certs/skillrack-programming-level-001-rank-1.pdf" target="_blank" rel="noopener">view</a><a href="https://www.skillrack.com/jcert/2461/RRI" target="_blank" rel="noopener">verify ↗</a></span>
+                        </div>
+                        <div class="cert">
+                            <span class="cert-ic gold"><i class="fas fa-ranking-star"></i></span>
+                            <span class="cert-body"><span class="cert-title">Java Programming Level 001 — Rank 1 / 101</span><span class="cert-meta">SkillRack · Feb 2021</span></span>
+                            <span class="cert-links"><a href="certs/skillrack-java-programming-level-001-rank-1.pdf" target="_blank" rel="noopener">view</a><a href="https://www.skillrack.com/jcert/2538/NKN" target="_blank" rel="noopener">verify ↗</a></span>
+                        </div>
+                        <div class="cert">
+                            <span class="cert-ic slate"><i class="fas fa-medal"></i></span>
+                            <span class="cert-body"><span class="cert-title">Daily Challenge — 500 solved</span><span class="cert-meta">SkillRack · Mar 2021 · after the 100 and 200 milestones</span></span>
+                            <span class="cert-links"><a href="certs/skillrack-daily-challenge-500.pdf" target="_blank" rel="noopener">view</a><a href="https://www.skillrack.com/cert/179401/PSB" target="_blank" rel="noopener">verify ↗</a></span>
+                        </div>
+                        <div class="cert">
+                            <span class="cert-ic slate"><i class="fas fa-medal"></i></span>
+                            <span class="cert-body"><span class="cert-title">Bronze Medals — 2000</span><span class="cert-meta">SkillRack · Dec 2020 · after 700, 1000 and 1500</span></span>
+                            <span class="cert-links"><a href="certs/skillrack-bronze-medals-2000.pdf" target="_blank" rel="noopener">view</a><a href="https://www.skillrack.com/cert/166193/MHH" target="_blank" rel="noopener">verify ↗</a></span>
+                        </div>
+                        <div class="cert">
+                            <span class="cert-ic slate"><i class="fas fa-diagram-project"></i></span>
+                            <span class="cert-body"><span class="cert-title">Elite Programming S001 — Dynamic Programming</span><span class="cert-meta">SkillRack · May 2020</span></span>
+                            <span class="cert-links"><a href="certs/skillrack-elite-dynamic-programming.pdf" target="_blank" rel="noopener">view</a></span>
+                        </div>
+                        <div class="cert">
+                            <span class="cert-ic slate"><i class="fas fa-laptop-code"></i></span>
+                            <span class="cert-body"><span class="cert-title">Hands-on programming courses — C, Java Basics, Python 3.x</span><span class="cert-meta">SkillRack · Sep–Nov 2020 · <a href="certs/skillrack-c-programming-course.pdf" target="_blank" rel="noopener">C</a> · <a href="certs/skillrack-java-basics-course.pdf" target="_blank" rel="noopener">Java</a> · <a href="certs/skillrack-python3-course.pdf" target="_blank" rel="noopener">Python</a></span></span>
+                        </div>
+                        <div class="cert">
+                            <span class="cert-ic slate"><i class="fas fa-building"></i></span>
+                            <span class="cert-body"><span class="cert-title">MNC &amp; Product Companies program sets</span><span class="cert-meta">SkillRack · 2020 · interview-style problem sets</span></span>
+                            <span class="cert-links"><a href="certs/skillrack-mnc-companies-programs.pdf" target="_blank" rel="noopener">view</a><a href="https://www.skillrack.com/cert/165751/OUK" target="_blank" rel="noopener">verify ↗</a></span>
+                        </div>
+                    </div>
+                    <p class="cert-more">Plus 38 more SkillRack certificates: algorithm tracks (<code>sorting · searching · strings · permutations &amp; combinations · stack · binary tree</code>), 50-challenge sets across C, C++, Java and Python, and the 2020 C-programming webinar series.</p>
+
+                    <h2 class="md-h2"><span class="hash">##</span>Competitions &amp; conferences</h2>
+                    <div class="cert-list">
+                        <div class="cert">
+                            <span class="cert-ic gold"><i class="fas fa-trophy"></i></span>
+                            <span class="cert-body"><span class="cert-title">TCS CodeVita Season 9 — Round 1 cleared</span><span class="cert-meta">Tata Consultancy Services · Aug 2020</span></span>
+                            <span class="cert-links"><a href="certs/tcs-codevita-season-9.pdf" target="_blank" rel="noopener">view</a></span>
+                        </div>
+                        <div class="cert">
+                            <span class="cert-ic gold"><i class="fas fa-lightbulb"></i></span>
+                            <span class="cert-body"><span class="cert-title">She The Force — India's largest women-focused hackathon</span><span class="cert-meta">WiT-ACE × IBM · #HackforSustainability · Jun 2021 · built Grab Scrap</span></span>
+                            <span class="cert-links"><a href="certs/wit-ace-she-the-force-hackathon-ibm.pdf" target="_blank" rel="noopener">view</a></span>
+                        </div>
+                        <div class="cert">
+                            <span class="cert-ic purple"><i class="fas fa-microphone"></i></span>
+                            <span class="cert-body"><span class="cert-title">ICRACE'20 — paper presentation</span><span class="cert-meta">“Facial Expression Recognition System using Multimodal Sensors” · Velammal Institute of Technology · Mar 2020</span></span>
+                            <span class="cert-links"><a href="certs/icrace-2020-paper-presentation.jpg" target="_blank" rel="noopener">view</a></span>
+                        </div>
+                    </div>
+
+                    <h2 class="md-h2"><span class="hash">##</span>Internship &amp; college</h2>
+                    <div class="cert-list">
+                        <div class="cert">
+                            <span class="cert-ic blue"><i class="fas fa-briefcase"></i></span>
+                            <span class="cert-body"><span class="cert-title">Data Science Internship</span><span class="cert-meta">Exposys Data Labs · Jun 2021</span></span>
+                            <span class="cert-links"><a href="certs/exposys-data-labs-internship.pdf" target="_blank" rel="noopener">view</a></span>
+                        </div>
+                        <div class="cert">
+                            <span class="cert-ic blue"><i class="fas fa-book-open"></i></span>
+                            <span class="cert-body"><span class="cert-title">IEEE Xplore — Research Methodology &amp; Search Techniques</span><span class="cert-meta">IEEE-EBSCO training · May 2020</span></span>
+                            <span class="cert-links"><a href="certs/ieee-xplore-research-methodology.pdf" target="_blank" rel="noopener">view</a></span>
+                        </div>
+                        <div class="cert">
+                            <span class="cert-ic blue"><i class="fas fa-graduation-cap"></i></span>
+                            <span class="cert-body"><span class="cert-title">Technical Connexion — 100% score</span><span class="cert-meta">St. Joseph's Institute of Technology · 2020</span></span>
+                            <span class="cert-links"><a href="certs/sjit-technical-connexion.pdf" target="_blank" rel="noopener">view</a></span>
+                        </div>
+                    </div>
+                    <p class="cert-more">Also: RMKCET intra-department tech fest and department quizzes (2020).</p>
+
+                    <div class="file-nav">
+                        <button data-open="achievements.md">← achievements.md</button>
                         <button data-open="education.md">education.md →</button>
                     </div>
                 </section>
@@ -1778,7 +2016,7 @@ profile ↑ → <span class="v-data">discount ↑</span>
                         </div>
                     </div>
                     <div class="file-nav">
-                        <button data-open="achievements.md">← achievements.md</button>
+                        <button data-open="certifications.md">← certifications.md</button>
                         <button data-open="contact.md">contact.md →</button>
                     </div>
                 </section>
@@ -1867,7 +2105,7 @@ profile ↑ → <span class="v-data">discount ↑</span>
             'README.md', 'about.md', 'experience.md', 'skills.json',
             'projects/crm-mcp-server.md', 'projects/ai-browser.md',
             'projects/zoho-crm-core.md', 'projects/product-management.md',
-            'projects/earlier-work.md', 'achievements.md', 'education.md', 'contact.md'
+            'projects/earlier-work.md', 'achievements.md', 'certifications.md', 'education.md', 'contact.md'
         ];
         const FILE_ICON = f => f.endsWith('.json') ? 'fas fa-code' : 'fab fa-markdown';
         const shortName = f => f.split('/').pop();
